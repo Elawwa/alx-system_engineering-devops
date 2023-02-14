@@ -1,2 +1,12 @@
 #!/bin/bash
-echo $PATH | tr ':' '\n' | wc -1
+# count the number of directories in the PATH environment variable
+
+# split the PATH variable into an array of directories
+IFS=':' read -ra dirs <<< "$PATH"
+
+# count the number of directories in the array
+num_dirs=${#dirs[@]}
+
+# output the number of directories
+echo "$num_dirs"
+
